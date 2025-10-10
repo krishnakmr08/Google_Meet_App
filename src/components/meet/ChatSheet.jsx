@@ -1,10 +1,8 @@
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
-import React, { useEffect, useState } from 'react';
 import ActionSheet from 'react-native-actions-sheet';
 import { screenHeight } from '../../utils/constants';
-
-
-import MessageText from './MessageText';
+import MessageInput from './MessageInput';
+import { comments } from '../../../dummyData';
 
 const ChatSheet = () => {
   return (
@@ -13,12 +11,12 @@ const ChatSheet = () => {
       headerAlwaysVisible={true}
       indicatorStyle={styles.indicator}
       keyboardHandlerEnabled={false}
+      gestureEnabled={Platform.OS === 'ios' ? true : false}
     >
-      <Text style={styles.text}>Meeting Chat</Text>
+      <Text style={styles.header}>Meeting Chat</Text>
       <View style={styles.divider} />
-      <View style={{ height: '80%' }}></View>
-
-      <MessageText />
+      <FlatList style={{ height: '80%', marginTop: 10 }} />
+      <MessageInput />
     </ActionSheet>
   );
 };
@@ -27,23 +25,24 @@ export default ChatSheet;
 
 const styles = StyleSheet.create({
   container: {
-    height: screenHeight * 0.7,
+    height: screenHeight * 0.8,
     backgroundColor: '#121212',
   },
   indicator: {
     height: 2,
     width: 30,
+    top: 2,
     backgroundColor: '#fff',
   },
-  text: {
+  header: {
     fontSize: 20,
     color: '#fff',
     alignSelf: 'center',
-    marginVertical: 15,
+    marginVertical: 20,
     fontWeight: '700',
   },
   divider: {
-    height: 1,
+    height: 0.2,
     width: '100%',
     backgroundColor: '#9197a6',
   },
