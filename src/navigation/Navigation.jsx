@@ -9,7 +9,7 @@ import PrepareMeetScreen from '../screens/PrepareMeetScreen';
 import { WSProvider } from '../service/api/WSProvider';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import ChatScreen from '../screens/ChatScreen';
+
 
 const Stack = createNativeStackNavigator();
 const Navigation = () => {
@@ -35,7 +35,7 @@ const Navigation = () => {
             component={PrepareMeetScreen}
           />
           <Stack.Screen name="LiveMeetScreen" component={LiveMeetScreen} />
-          <Stack.Screen name="ChatScreen" component={ChatScreen} />
+          
         </Stack.Navigator>
       </NavigationContainer>
     </WSProvider>

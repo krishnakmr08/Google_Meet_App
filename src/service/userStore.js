@@ -9,6 +9,7 @@ export const useUserStore = create()(
     (set, get) => ({
       user: null,
       sessions: [],
+    
       setUser: (data) =>set({user: data}),
       addSession: sessionId => {
         const { sessions } = get();

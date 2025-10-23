@@ -7,7 +7,7 @@ import {
   MediaStream,
 } from 'react-native-webrtc';
 import { useWS } from '../service/api/WSProvider';
-import { useLiveMeetStore } from '../service/MeetStore';
+import { useLiveMeetStore } from '../service/meetStore';
 import { useUserStore } from '../service/userStore';
 import { peerConstraints } from '../utils/Helpers';
 
