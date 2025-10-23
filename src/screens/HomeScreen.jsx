@@ -16,7 +16,7 @@ import { useUserStore } from '../service/userStore';
 import { useWS } from '../service/api/WSProvider';
 import { Colors } from '../utils/constants';
 import { removeHyphens, addHyphens } from '../utils/Helpers';
-import { useLiveMeetStore } from '../service/MeetStore';
+import { useLiveMeetStore } from '../service/meetStore';
 import { checkSession } from '../service/api/session';
 const HomeScreen = () => {
   const { emit } = useWS();
